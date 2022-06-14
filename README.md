@@ -8,11 +8,11 @@
 3) composer install
 4) Отредактировать .env проекта для подключения к докеровской БД (прикладываю .env.example проекта)
    1) DB_CONNECTION=mysql
-      DB_HOST=mysql
-      DB_PORT=3306
-      DB_DATABASE=DevitDB
-      DB_USERNAME=root
-      DB_PASSWORD=root
+   2) DB_HOST=mysql 
+   3) DB_PORT=3306 
+   4) DB_DATABASE=DevitDB 
+   5) DB_USERNAME=root 
+   6) DB_PASSWORD=root
 5) php artisan migrate
 6) Запустить artisan команду: php artisan posts:getRSS (или подождать отработку CRON)
 7) Ссылка на Swagger Documentation: http://localhost/api/documentation
