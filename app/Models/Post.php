@@ -11,10 +11,12 @@ class Post extends Model
     use HasFactory;
 
     protected $fillable = ['uid', 'title', 'link', 'description', 'author_name', 'created_at', 'updated_at'];
+    protected $with = ["categories"];
+
 
     public function categories(): belongsToMany
     {
         return $this->belongsToMany(
-            User::class, "posts_categories", "post_id", "category_id");
+            Category::class, "posts_categories", "post_id", "category_id");
     }
 }

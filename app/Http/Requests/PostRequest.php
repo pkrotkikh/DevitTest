@@ -30,7 +30,7 @@ class PostRequest extends FormRequest
             'link' => ["required", "string"],
             'description' => ["required", "string"],
             'author_name' => ["required", 'string'],
-//            'categories' => ["array"],
+            'categories' => ["array"],
             'categories.*.name' => ["string"],
         ];
     }
