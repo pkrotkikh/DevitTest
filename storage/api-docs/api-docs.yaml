@@ -1,0 +1,124 @@
+swagger: '2.0'
+info:
+  title: Devit Test API
+  description: Swagger API
+  version: "1.0.0"
+host:  localhost
+schemes:
+  - http
+basePath: /api/v1
+produces:
+  - application/json
+tags:
+  - name: "Post"
+    description: "API Authentication related calls"
+
+paths:
+  /posts:
+    get:
+      summary: Get all posts
+      tags:
+        - Post
+      responses:
+        200:
+          description: OK
+
+    post:
+      summary: Store post
+      parameters:
+        - name: uid
+          in: formData
+          required: true
+          type: integer
+        - name: title
+          in: formData
+          required: true
+          type: string
+        - name: link
+          in: formData
+          required: true
+          type: string
+        - name: description
+          in: formData
+          required: true
+          type: string
+        - name: author_name
+          in: formData
+          required: true
+          type: string
+        - name: categories
+          in: formData
+          required: true
+          type: array
+
+      tags:
+        - Post
+      responses:
+        200:
+          description: OK
+
+  /posts/{id}:
+    get:
+      summary: Get specific post
+      tags:
+        - Post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+
+      responses:
+        200:
+          description: OK
+
+    put:
+      summary: Update post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+        - name: uid
+          in: formData
+          required: true
+          type: integer
+        - name: title
+          in: formData
+          required: true
+          type: string
+        - name: link
+          in: formData
+          required: true
+          type: string
+        - name: description
+          in: formData
+          required: true
+          type: string
+        - name: author_name
+          in: formData
+          required: true
+          type: string
+        - name: categories
+          in: formData
+          required: true
+          type: array
+      tags:
+        - Post
+      responses:
+        200:
+          description: OK
+
+    delete:
+      summary: Delete post
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: integer
+      tags:
+        - Post
+      responses:
+        200:
+          description: OK
+
